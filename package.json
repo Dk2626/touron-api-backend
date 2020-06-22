@@ -4,14 +4,19 @@
   "description": "A api for touron businesses",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "12.14.0"
   },
   "author": "vicky",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "helmet": "^3.23.1",
     "mongoose": "^5.9.19",
     "nodemon": "^2.0.4"
   }

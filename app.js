@@ -13,7 +13,12 @@ const TourIdeaRoute = require('./routes/tourIdeaRoute')
 const app = express();
 
 
+// for production only
+const helmet = require('helmet')
+const compression = require('compression')
 
+app.use(helmet())
+app.use(compression())
 
 const corsObj={
   orgin:"http://localost:4200",
