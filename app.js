@@ -50,6 +50,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 app.get("/", (req, res) => {
+  res.send("Welcome to touron api")
   console.log("Hello world");
 });
 
