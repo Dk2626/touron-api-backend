@@ -63,12 +63,12 @@ router.get('/city/edit/:id',async (req,res)=>{
 router.post('/city/edit/:id',async (req,res)=>{
   
   let city = await City.findById({_id:req.params.id})
-
+  console.log(req.body)
   city.cityName = req.body.cityName
   city.countryName = req.body.countryName
   city.aboutCity = req.body.aboutCity
   city.imageUrl = req.body.imageUrl
-  city.idealDays = req.body.idealDay
+  city.idealDays = req.body.idealDays
   city.weather = req.body.weather
   city.coordinates={
      latitude:req.body.latitude,
