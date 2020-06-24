@@ -46,6 +46,7 @@ router.post("/tour", async (req, res) => {
   try {
     // const { name, coordinates, description, journeyType ,imageUrl} = req.body;
     // console.log(name, coordinates, description, journeyType);
+    console.log(req.body)
     const tour = new TourIdea(req.body);
 
     await tour.save();

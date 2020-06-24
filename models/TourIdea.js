@@ -50,16 +50,16 @@ tourDuration:{
     required:true
 },
 tourCategory:{
-    type:String,
-    required:true
+   type:Array,
+   required:true
 },
 tourType:{
     type:String,
-    required:true
+    require:true
 },
 idealType:{
-    type:String,
-    required:true
+   type:Array,
+   required:true
 },
 
 
@@ -67,11 +67,6 @@ idealType:{
 
 
 module.exports = mongoose.model('TourIdea',TourIdea)
-
-
-
-
-
 
 
 
