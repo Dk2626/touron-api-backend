@@ -21,10 +21,6 @@ imageUrl:{
     type:String,
     required:true
 },
-idealDays:{
-    type:String,
-    required:true
-},
 tourCost:{
     adult:Number,
     children:Number
@@ -41,7 +37,7 @@ inclusion:{
     type:String,
     required:true
 },
-itineary:{
+itinerary:{
     type:String,
     required:true
 },
@@ -49,10 +45,24 @@ pickUpPoint:{
     type:String,
     required:true
 },
-journeyType:{
+tourDuration:{
     type:String,
     required:true
 },
+tourCategory:{
+    type:String,
+    required:true
+},
+tourType:{
+    type:String,
+    required:true
+},
+idealType:{
+    type:String,
+    required:true
+},
+
+
 })
 
 

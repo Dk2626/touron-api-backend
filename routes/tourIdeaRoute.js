@@ -67,12 +67,11 @@ router.get('/tour/edit/:id',async (req,res)=>{
 router.post('/tour/edit/:id',async (req,res)=>{
   
   let tour = await TourIdea.findById({_id:req.params.id})
-
+console.log(req.body)
   tour.cityName = req.body.cityName
   tour.tourName = req.body.tourName
   tour.aboutTour = req.body.aboutTour
   tour.imageUrl = req.body.imageUrl
-  tour.idealDays = req.body.idealDays
   tour.tourCost={
       adult:req.body.adult,
       children:req.body.children
@@ -80,9 +79,14 @@ router.post('/tour/edit/:id',async (req,res)=>{
   tour.ratings = req.body.ratings
   tour.reviews = req.body.reviews
   tour.inclusion = req.body.inclusion
-  tour.itineary = req.body.itineary
+  tour.itinerary = req.body.itinerary
   tour.pickUpPoint = req.body.pickUpPoint
-  tour.journeyType = req.body.journeyType
+  tour.tourDuration = req.body.tourDuration
+  tour.tourCategory  =req.body.tourCategory
+  tour.tourType = req.body.tourType
+  tour.idealType = req.body.idealType
+  
+
   console.log(tour)
    tour.save()
    res.json({tour:tour}).status(200);
