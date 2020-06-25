@@ -42,7 +42,7 @@ itinerary:{
     required:true
 },
 pickUpPoint:{
-    type:String,
+    type:Array,
     required:true
 },
 tourDuration:{

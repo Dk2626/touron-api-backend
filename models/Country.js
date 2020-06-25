@@ -38,7 +38,7 @@ general:{
         required:true
     },
     bestTimeToVisit:{
-        type:String,
+        type:Array,
         required:true
     }
 },

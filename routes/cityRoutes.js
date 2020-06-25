@@ -70,6 +70,7 @@ router.post('/city/edit/:id',async (req,res)=>{
   city.imageUrl = req.body.imageUrl
   city.idealDays = req.body.idealDays
   city.weather = req.body.weather
+  city.famousPlacesToVisit = req.body.famousPlacesToVisit
   city.coordinates={
      latitude:req.body.latitude,
       longitude:req.body.longitude

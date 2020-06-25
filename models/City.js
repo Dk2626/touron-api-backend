@@ -41,6 +41,10 @@ travelDuration:{
 idealDays:{
     type:String,
     required:true
+},
+famousPlacesToVisit:{
+    type:String,
+    required:true
 }
 })
 
