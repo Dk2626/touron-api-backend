@@ -76,6 +76,8 @@ router.post('/city/edit/:id',async (req,res)=>{
       longitude:req.body.longitude
   },
   city.travelDuration= req.body.travelDuration
+  city.airportType= req.body.airportType
+  city.airportName= req.body.airportName
   console.log(city)
    city.save()
    res.json({city:city}).status(200)

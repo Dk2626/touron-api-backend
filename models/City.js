@@ -45,6 +45,14 @@ idealDays:{
 famousPlacesToVisit:{
     type:String,
     required:true
+},
+airportType:{
+    type:String,
+    required:true
+},
+airportName:{
+    type:String,
+    required:true
 }
 })
 

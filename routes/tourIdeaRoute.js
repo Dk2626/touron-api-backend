@@ -86,6 +86,8 @@ console.log(req.body)
   tour.tourCategory  =req.body.tourCategory
   tour.tourType = req.body.tourType
   tour.idealType = req.body.idealType
+  tour.additionalInformation = req.body.additionalInformation
+  tour.tourPreferance = req.body.tourPreferance
   
 
   console.log(tour)

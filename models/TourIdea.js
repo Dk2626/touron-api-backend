@@ -35,11 +35,13 @@ reviews:{
 },
 inclusion:{
     type:String,
-    required:true
+    required:true,
+    maxlength:1000
 },
 itinerary:{
     type:String,
-    required:true
+    required:true,
+    maxlength:1000
 },
 pickUpPoint:{
     type:Array,
@@ -59,6 +61,14 @@ tourType:{
 },
 idealType:{
    type:Array,
+   required:true
+},
+tourPreferance:{
+   type:String,
+   required:true
+},
+additionalInformation:{
+   type:String,
    required:true
 },
 
