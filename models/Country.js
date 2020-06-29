@@ -24,7 +24,7 @@ visa:{
         type:String,
         require:true},
     cost:{
-        type:String,
+        type:Number,
         required:true
     }
 },

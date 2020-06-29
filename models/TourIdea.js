@@ -26,11 +26,11 @@ tourCost:{
     children:Number
 },
 ratings:{
-    type:Number,
+    type:String,
     require:true
 },
 reviews:{
-    type:Number,
+    type:String,
     require:true
 },
 inclusion:{
