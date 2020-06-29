@@ -36,12 +36,12 @@ reviews:{
 inclusion:{
     type:String,
     required:true,
-    maxlength:1000
+    maxlength:10000
 },
 itinerary:{
     type:String,
     required:true,
-    maxlength:1000
+    maxlength:10000
 },
 pickUpPoint:{
     type:Array,
