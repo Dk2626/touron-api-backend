@@ -71,6 +71,14 @@ additionalInformation:{
    type:String,
    required:true
 },
+referanceLink:{
+    type:String,
+    required:true
+ },
+trending:{
+    type:String,
+    required:true
+ },
 
 
 })

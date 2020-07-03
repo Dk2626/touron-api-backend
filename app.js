@@ -21,7 +21,7 @@ app.use(helmet())
 app.use(compression())
 
 const corsObj={
-  orgin:"http://localost:4200",
+  orgin:"http:localost:4200",
   optionSuccessStatus:200
 }
 //using the cors obj

@@ -85,6 +85,8 @@ console.log(req.body)
   tour.tourDuration = req.body.tourDuration
   tour.tourCategory  =req.body.tourCategory
   tour.tourType = req.body.tourType
+  tour.trending = req.body.trending
+  tour.referanceLink= req.body.referanceLink
   tour.idealType = req.body.idealType
   tour.additionalInformation = req.body.additionalInformation
   tour.tourPreferance = req.body.tourPreferance
