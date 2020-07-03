@@ -69,11 +69,13 @@ tourPreferance:{
 },
 additionalInformation:{
    type:String,
+   maxlength:10000,
    required:true
 },
 referanceLink:{
     type:String,
-    required:true
+    required:true,
+    maxlength:10000
  },
 trending:{
     type:String,
