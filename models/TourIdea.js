@@ -8,6 +8,10 @@ cityName:{
     type:String,
     required:true
 },
+countryName:{
+    type:String,
+    required:true
+},
 
 tourName:{
     type:String,
@@ -22,8 +26,14 @@ imageUrl:{
     required:true
 },
 tourCost:{
-    adult:Number,
-    children:Number
+    adult:{
+        type:Number,
+        required:true
+    },
+    children:{
+        type:Number,
+        required:true
+    }
 },
 ratings:{
     type:String,
@@ -81,6 +91,19 @@ trending:{
     type:String,
     required:true
  },
+pickUpAvailableOn:{
+    type:Array,
+    required:true
+ },
+pickUpTime:{
+    type:String,
+    required:true
+ },
+dropTime:{
+    type:String,
+    required:true
+ }
+
 
 
 })

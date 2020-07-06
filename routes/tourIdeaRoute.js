@@ -70,6 +70,7 @@ router.post('/tour/edit/:id',async (req,res)=>{
   let tour = await TourIdea.findById({_id:req.params.id})
 console.log(req.body)
   tour.cityName = req.body.cityName
+  tour.countryName = req.body.countryName
   tour.tourName = req.body.tourName
   tour.aboutTour = req.body.aboutTour
   tour.imageUrl = req.body.imageUrl
@@ -82,9 +83,13 @@ console.log(req.body)
   tour.inclusion = req.body.inclusion
   tour.itinerary = req.body.itinerary
   tour.pickUpPoint = req.body.pickUpPoint
+  tour.pickUpAvailableOn = req.body.pickUpAvailableOn
+  tour.pickUpTime = req.body.pickUpTime
+  tour.dropTime = req.body.dropTime
   tour.tourDuration = req.body.tourDuration
   tour.tourCategory  =req.body.tourCategory
   tour.tourType = req.body.tourType
+
   tour.trending = req.body.trending
   tour.referanceLink= req.body.referanceLink
   tour.idealType = req.body.idealType
