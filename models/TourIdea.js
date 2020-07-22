@@ -106,7 +106,7 @@ dropTime:{
 
 
 
-})
+},{timestamps:true})
 
 
 module.exports = mongoose.model('TourIdea',TourIdea)

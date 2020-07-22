@@ -52,7 +52,7 @@ idealDays:{
 }
 
 
-})
+},{timestamps:true})
 
 
 module.exports = mongoose.model('Country',Country)
