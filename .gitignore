@@ -9,7 +9,12 @@
 
 # dependencies
 /node_modules
+.idea/
+.vs/
 .env
+.pk
+.pem
+.pub
 
 # profiling files
 chrome-profiler-events*.json
