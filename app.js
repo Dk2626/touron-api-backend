@@ -32,7 +32,8 @@ app.use(cityRoute);
 app.use(PlaceRoute);
 app.use(CountryRoute);
 app.use(TourIdeaRoute);
-const mongodbUri = process.env.DATABASE;
+const mongodbUri =
+  "mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority";
 
 mongoose.connect(mongodbUri, {
   useNewUrlParser: true,
