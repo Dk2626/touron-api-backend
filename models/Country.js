@@ -1,67 +1,62 @@
-const  mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
-const Country = new Schema({
-countryName:{
-    type:String,
-    required:true
-},
-aboutCountry:{
-    type:String,
-    required:true
-},
-imageUrl:{
-    type:String,
-    required:true
-},
-weather:{
-    type:String,
-    required:true
-},
-visa:{
-    onArrival:{
-        type:String,
-        require:true},
-    cost:{
-        type:Number,
-        required:true
-    }
-},
-general:{
-    currency:{
-        type:String,
-        required:true
+const Country = new Schema(
+  {
+    countryName: {
+      type: String,
+      required: true,
     },
-    timeZone:{
-        type:String,
-        required:true
+    aboutCountry: {
+      type: String,
+      required: true,
     },
-    bestTimeToVisit:{
-        type:Array,
-        required:true
-    }
-},
-bestPlaces:{
-    type:String,
-    required:true
-},
-idealDays:{
-    type:String,
-    required:true
-}
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    weather: {
+      type: String,
+      required: true,
+    },
+    visa: {
+      onArrival: {
+        type: String,
+        require: true,
+      },
+      cost: {
+        type: Number,
+        required: true,
+      },
+    },
+    general: {
+      currency: {
+        type: String,
+        required: true,
+      },
+      timeZone: {
+        type: String,
+        required: true,
+      },
+      bestTimeToVisit: {
+        type: Array,
+        required: true,
+      },
+    },
+    bestPlaces: {
+      type: String,
+      required: true,
+    },
+    idealDays: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: { currentTime: () => Date.toLocaleTimeString("en-IN") } }
+);
 
-
-},{timestamps:true})
-
-
-module.exports = mongoose.model('Country',Country)
-
-
-
-
-
-
+module.exports = mongoose.model("Country", Country);
 
 // {
 //     "countryName":"Paris",
