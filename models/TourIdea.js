@@ -104,7 +104,7 @@ const TourIdea = new Schema(
       required: true,
     },
   },
-  { timestamps: { currentTime: () => Date.toLocaleTimeString("en-IN") } }
+  { timestamps: { currentTime: () => Date.now() } }
 );
 
 module.exports = mongoose.model("TourIdea", TourIdea);
