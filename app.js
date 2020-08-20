@@ -2,6 +2,7 @@ require("dotenv").config();
 require("./models/City");
 require("./models/Place");
 require("./models/Country");
+require("./models/VisaDetails");
 require("./models/TourIdea");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -11,6 +12,7 @@ const cityRoute = require("./routes/cityRoutes");
 const PlaceRoute = require("./routes/placeRoute");
 const CountryRoute = require("./routes/countryRoutes");
 const TourIdeaRoute = require("./routes/tourIdeaRoute");
+const VisaRoute = require("./routes/VisaRoutes");
 const app = express();
 
 // for production only
@@ -32,6 +34,7 @@ app.use(cityRoute);
 app.use(PlaceRoute);
 app.use(CountryRoute);
 app.use(TourIdeaRoute);
+app.use(VisaRoute);
 const mongodbUri =
   "mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority";
 

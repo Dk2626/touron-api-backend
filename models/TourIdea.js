@@ -108,20 +108,3 @@ const TourIdea = new Schema(
 );
 
 module.exports = mongoose.model("TourIdea", TourIdea);
-
-// {
-//     "cityName":"Paris",
-//     "tourName":"Eifle tower tour",
-//     "description":"A fantastic place",
-//     "imageUrl":"https://www.google.com",
-//     "idealDays":"4-5 days",
-//     "tourCost":{
-//         "adult":3000,
-//         "children":1000
-//     },
-//     "rating":4.5,
-//     "reviews":232,
-//     "inclusion":".........",
-//     "itineary":"..........",
-//     "pickUpPoint":"Hotel/Common"
-// }
