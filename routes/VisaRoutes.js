@@ -43,11 +43,19 @@ router.post("/visa/edit/:id", async (req, res) => {
     salarySubmission: req.body.salarySubmission,
     salaryFinancials: req.body.salaryFinancials,
     salaryDocsRequired: req.body.salaryDocsRequired,
+    salaryPhotography: req.body.salaryPhotography,
+    salaryHoneymooners: req.body.salaryHoneymooners,
+    salaryAppointment: req.body.salaryAppointment,
+    salaryDuration: req.body.salaryDuration,
   }),
     (visa.selfEmployedDocs = {
       selfEmployedSubmission: req.body.selfEmployedSubmission,
       selfEmployedFinancials: req.body.selfEmployedFinancials,
       selfEmployedDocsRequired: req.body.selfEmployedDocsRequired,
+      selfEmployedPhotography: req.body.selfEmployedPhotography,
+      selfEmployedHoneymooners: req.body.selfEmployedHoneymooners,
+      selfEmployedAppointment: req.body.selfEmployedAppointment,
+      selfEmployedDuration: req.body.selfEmployedDuration,
     }),
     console.log(visa);
   visa.save();

@@ -26,6 +26,26 @@ const Visa = new Schema(
         required: true,
         maxlength: 100000,
       },
+      salaryPhotography: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      salaryHoneymooners: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      salaryAppointment: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      salaryDuration: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
     },
     selfEmployedDocs: {
       selfEmployedSubmission: {
@@ -40,6 +60,26 @@ const Visa = new Schema(
       },
 
       selfEmployedDocsRequired: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      selfEmployedPhotography: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      selfEmployedHoneymooners: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      selfEmployedAppointment: {
+        type: String,
+        required: true,
+        maxlength: 100000,
+      },
+      selfEmployedDuration: {
         type: String,
         required: true,
         maxlength: 100000,
