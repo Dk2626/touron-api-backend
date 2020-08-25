@@ -39,6 +39,7 @@ router.post("/visa/edit/:id", async (req, res) => {
   console.log(req.body);
 
   visa.countryName = req.body.countryName;
+  visa.imageUrl = req.body.imageUrl;
   (visa.salaryDocs = {
     salarySubmission: req.body.salarySubmission,
     salaryFinancials: req.body.salaryFinancials,

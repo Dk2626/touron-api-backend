@@ -8,6 +8,10 @@ const Visa = new Schema(
       type: String,
       required: true,
     },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
 
     salaryDocs: {
       salarySubmission: {
