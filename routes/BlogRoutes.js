@@ -53,6 +53,15 @@ router.post("/blog/edit/:id", async (req, res) => {
   blog.subHeading3 = req.body.subHeading3;
   blog.imageSrc3 = req.body.imageSrc3;
   blog.content3 = req.body.content3;
+  blog.subHeading4 = req.body.subHeading4;
+  blog.imageSrc4 = req.body.imageSrc4;
+  blog.content4 = req.body.content4;
+  blog.subHeading5 = req.body.subHeading5;
+  blog.imageSrc5 = req.body.imageSrc5;
+  blog.content5 = req.body.content5;
+  blog.subHeading6 = req.body.subHeading6;
+  blog.imageSrc6 = req.body.imageSrc6;
+  blog.content6 = req.body.content6;
 
   console.log(blog);
   blog.save();

@@ -54,6 +54,39 @@ const Blog = new Schema(
       type: String,
       require: true,
     },
+    subHeading4: {
+      type: String,
+    },
+    content4: {
+      type: String,
+      maxlength: 100000,
+    },
+    imageSrc4: {
+      type: String,
+      require: true,
+    },
+    subHeading5: {
+      type: String,
+    },
+    content5: {
+      type: String,
+      maxlength: 100000,
+    },
+    imageSrc5: {
+      type: String,
+      require: true,
+    },
+    subHeading6: {
+      type: String,
+    },
+    content6: {
+      type: String,
+      maxlength: 100000,
+    },
+    imageSrc6: {
+      type: String,
+      require: true,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );
