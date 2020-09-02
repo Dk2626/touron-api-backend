@@ -8,6 +8,14 @@ const Blog = new Schema(
       type: String,
       required: true,
     },
+    countryName: {
+      type: Array,
+      required: true,
+    },
+    cityName: {
+      type: Array,
+      required: true,
+    },
     content: {
       type: String,
       required: true,

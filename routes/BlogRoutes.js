@@ -26,13 +26,13 @@ router.post("/blog", async (req, res) => {
   }
 });
 
-//single city to edit
 router.get("/blog/edit/:id", async (req, res) => {
   console.log(req.params.id);
   const blog = await Blog.findById({ _id: req.params.id });
   console.log(blog);
   res.send(blog);
 });
+//single city to edit
 
 //Update City
 
@@ -43,6 +43,8 @@ router.post("/blog/edit/:id", async (req, res) => {
   blog.blogTitle = req.body.blogTitle;
   blog.imageSrc = req.body.imageSrc;
   blog.content = req.body.content;
+  blog.countryName = req.body.countryName;
+  blog.cityName = req.body.cityName;
   blog.keywords = req.body.keywords;
   blog.subHeading1 = req.body.subHeading1;
   blog.imageSrc1 = req.body.imageSrc1;
