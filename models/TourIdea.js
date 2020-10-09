@@ -61,18 +61,12 @@ const TourIdea = new Schema(
       type: String,
       required: true,
     },
-    tourCategory: {
-      type: Array,
-      required: true,
-    },
+    tourCategory: [String],
     tourType: {
       type: String,
       require: true,
     },
-    idealType: {
-      type: Array,
-      required: true,
-    },
+    idealType: [String],
     tourPreferance: {
       type: String,
       required: true,
