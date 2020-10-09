@@ -46,12 +46,18 @@ router.get("/tour/tourtype/:tourtype", async (req, res) => {
   const tour = await TourIdea.find({ tourType: req.params.tourtype });
   res.send(tour);
 });
-router.get("/tour/tourtype/:tourcategory", async (req, res) => {
+router.get("/tour/tourcategory/:tourcategory", async (req, res) => {
   console.log(req.params.tourcategory, "ko");
-  const tour = await TourIdea.find()
-    .where("tourCategory")
-    .in([req.params.tourcategory])
-    .res.send(tour);
+  const tour = await TourIdea.find({
+    tourCategory: { $in: [req.params.tourcategory] },
+  });
+  res.send(tour);
+});
+router.get("/tour/idealtype/:idealtype", async (req, res) => {
+  const tour = await TourIdea.find({
+    idealType: { $in: [req.params.idealtype] },
+  });
+  res.send(tour);
 });
 
 //Post city
