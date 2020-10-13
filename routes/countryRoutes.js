@@ -8,9 +8,23 @@ const Country = mongoose.model("Country");
 
 // get City
 router.get("/country", async (req, res) => {
-  const country = await Country.find();
-  console.log("City route called", country.length);
-  res.send(country);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+
+    const country = await Country.find()
+      .skip((page - 1) * 10)
+      .limit(pageSize);
+    console.log("City route called", country.length);
+
+    res.send(country);
+  } else {
+    const country = await Country.find();
+
+    console.log("City route called", country.length);
+
+    res.send(country);
+  }
 });
 
 // router.get("/city/:id", async (req, res) => {

@@ -10,16 +10,22 @@ const TourIdea = mongoose.model("TourIdea");
 router.get("/tour", async (req, res) => {
   console.log(req.query, "query");
 
-  const pageSize = parseInt(req.query.pageSize);
-  const page = parseInt(req.query.page);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
 
-  console.log(pageSize, page, "size");
-  // console.log(query, "query");
-  const tour = await TourIdea.find()
-    .skip((page - 1) * 10)
-    .limit(pageSize);
-  console.log("City route called");
-  res.send(tour);
+    console.log(pageSize, page, "size");
+    // console.log(query, "query");
+    const tour = await TourIdea.find()
+      .skip((page - 1) * 10)
+      .limit(pageSize);
+    console.log("City route called");
+    res.send(tour);
+  } else {
+    const tour = await TourIdea.find();
+    console.log("City route called");
+    res.send(tour);
+  }
 });
 
 router.get("/tour/:id", async (req, res) => {
