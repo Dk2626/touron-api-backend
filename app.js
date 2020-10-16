@@ -5,6 +5,8 @@ require("./models/Country");
 require("./models/VisaDetails");
 require("./models/TourIdea");
 require("./models/Blog");
+require("./models/Banner");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -15,6 +17,7 @@ const CountryRoute = require("./routes/countryRoutes");
 const TourIdeaRoute = require("./routes/tourIdeaRoute");
 const VisaRoute = require("./routes/VisaRoutes");
 const BlogRoute = require("./routes/BlogRoutes");
+const BannerRoute = require("./routes/BannerRoutes");
 const app = express();
 
 // for production only
@@ -38,6 +41,7 @@ app.use(CountryRoute);
 app.use(TourIdeaRoute);
 app.use(VisaRoute);
 app.use(BlogRoute);
+app.use(BannerRoute);
 const mongodbUri =
   "mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority";
 
