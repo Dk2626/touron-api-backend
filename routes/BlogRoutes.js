@@ -8,9 +8,23 @@ const Blog = mongoose.model("Blog");
 
 // get City
 router.get("/blog", async (req, res) => {
-  const blog = await Blog.find();
-  console.log("Blog route called");
-  res.send(blog);
+  console.log(req.query);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+
+    const blog = await Blog.find()
+
+      .skip((page - 1) * 10)
+      .limit(pageSize);
+    console.log("Blog route called", blog.length);
+
+    res.send(blog);
+  } else {
+    const blog = await Blog.find();
+    console.log("Blog route called");
+    res.send(blog);
+  }
 });
 
 //Post city
