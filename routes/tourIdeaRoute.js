@@ -48,6 +48,12 @@ router.get("/tour/cityname/:name", async (req, res) => {
   res.send(tour);
 });
 
+router.get("/tour/countryname/:name", async (req, res) => {
+  console.log(req.params);
+  const tour = await TourIdea.find({ countryName: req.params.name });
+  res.send(tour);
+});
+
 router.get("/tour/tourname/:name", async (req, res) => {
   console.log(req.params);
   console.log(req.params);
