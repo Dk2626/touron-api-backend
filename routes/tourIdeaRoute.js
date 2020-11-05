@@ -35,32 +35,6 @@ router.get("/tour", async (req, res) => {
     });
     console.log(tour.length, "l");
     res.send(tour);
-  } else if (req.query.tourCategory && req.query.idealType) {
-    console.log(req.query, "id vanthuruchu");
-    const tour = await TourIdea.find({
-      tourCategory: { $in: [req.query.tourCategory] },
-      idealType: { $in: [req.query.idealType] },
-    });
-    console.log(tour.length, "l");
-    res.send(tour);
-    // tourType: req.query.tourType,
-  } else if (req.query.tourCategory && req.query.tourType) {
-    console.log(req.query, "id vanthuruchu");
-    const tourType = req.query.tourType.toString();
-    const tour = await TourIdea.find({
-      tourCategory: { $in: [req.query.tourCategory] },
-      tourType: req.query.tourType,
-    });
-    console.log(tour.length, "l");
-    res.send(tour);
-  } else if (req.query.idealType && req.query.tourType) {
-    console.log(req.query, "id vanthuruchu");
-    const tour = await TourIdea.find({
-      idealType: { $in: [req.query.idealType] },
-      tourType: req.query.tourType,
-    });
-    console.log(tour.length, "l");
-    res.send(tour);
   } else {
     const tour = await TourIdea.find();
     // console.log("City route called");
@@ -137,8 +111,6 @@ router.get("/tour/idealtype/:idealtype", async (req, res) => {
 //Post city
 router.post("/tour", async (req, res) => {
   try {
-    // const { name, coordinates, description, journeyType ,imageUrl} = req.body;
-    // console.log(name, coordinates, description, journeyType);
     console.log(req.body);
     const tour = new TourIdea(req.body);
 
@@ -204,3 +176,31 @@ router.post("/tour/delete/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+// else if (req.query.tourCategory && req.query.idealType) {
+//   console.log(req.query, "id vanthuruchu");
+//   const tour = await TourIdea.find({
+//     tourCategory: { $in: [req.query.tourCategory] },
+//     idealType: { $in: [req.query.idealType] },
+//   });
+//   console.log(tour.length, "l");
+//   res.send(tour);
+//   // tourType: req.query.tourType,
+// } else if (req.query.tourCategory && req.query.tourType) {
+//   console.log(req.query, "id vanthuruchu");
+//   const tourType = req.query.tourType.toString();
+//   const tour = await TourIdea.find({
+//     tourCategory: { $in: [req.query.tourCategory] },
+//     tourType: req.query.tourType,
+//   });
+//   console.log(tour.length, "l");
+//   res.send(tour);
+// } else if (req.query.idealType && req.query.tourType) {
+//   console.log(req.query, "id vanthuruchu");
+//   const tour = await TourIdea.find({
+//     idealType: { $in: [req.query.idealType] },
+//     tourType: req.query.tourType,
+//   });
+//   console.log(tour.length, "l");
+//   res.send(tour);
+// }
