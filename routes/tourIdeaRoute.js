@@ -7,41 +7,39 @@ const router = express.Router();
 const TourIdea = mongoose.model("TourIdea");
 
 // get City
-router.get("/tour", async (req, res) => {
-  console.log(req.query, "query");
-
-  if (req.query.page && req.query.pageSize) {
-    const pageSize = parseInt(req.query.pageSize);
-    const page = parseInt(req.query.page);
-
-    console.log(pageSize, page, "size");
-    // console.log(query, "query");
-    const tour = await TourIdea.find()
-      .skip((page - 1) * 10)
-      .limit(pageSize);
-    // console.log("City route called");
-    res.send(tour);
-  } else if (
-    req.query.tourCategory &&
-    req.query.idealType &&
-    req.query.tourType
-  ) {
+router.get("/filtertour", async (req, res) => {
+  console.log(req.query);
+  if (req.query) {
     console.log(req.query, "id vanthuruchu");
-    const tourType = req.query.tourType.toString();
+
+    const tourCategory =
+      req.query.tourCategory == ""
+        ? req.query.tourCategory
+        : req.query.tourCategory;
+    const tourType =
+      req.query.tourType == "" ? req.query.tourType : req.query.tourType;
+    const idealType =
+      req.query.idealType == "" ? req.query.idealType : req.query.idealType;
+
+    console.log(tourCategory, tourType, idealType, "p");
     const tour = await TourIdea.find({
-      tourCategory: { $in: [req.query.tourCategory] },
-      idealType: { $in: [req.query.idealType] },
-      tourType: req.query.tourType,
+      $or: [
+        { tourCategory: { $in: [tourCategory] } },
+        { idealType: { $in: [idealType] } },
+        { tourType: tourType },
+      ],
     });
+    res.send(tour);
     console.log(tour.length, "l");
-    res.send(tour);
-  } else {
-    const tour = await TourIdea.find();
-    // console.log("City route called");
-    res.send(tour);
   }
 });
 
+router.get("/tour", async (req, res) => {
+  // console.log(req.params, "id vanthuruchu");
+  const tour = await TourIdea.find();
+  console.log(tour.length);
+  res.send(tour);
+});
 router.get("/tour/:id", async (req, res) => {
   console.log(req.params, "id vanthuruchu");
   const tour = await TourIdea.findById({ _id: req.params.id });
@@ -60,14 +58,6 @@ router.get(
     res.send(tour);
   }
 );
-
-//Get City by Name
-
-// router.get('/tour/countryname/:name',async (req,res)=>{
-//   console.log(req.params)
-//   const tour = await TourIdea.find({countryName:req.params.name})
-//   res.send(tour)
-// })
 
 router.get("/tour/cityname/:name", async (req, res) => {
   console.log(req.params);
