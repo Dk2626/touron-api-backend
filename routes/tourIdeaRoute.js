@@ -19,11 +19,51 @@ router.get("/tour", async (req, res) => {
     const tour = await TourIdea.find()
       .skip((page - 1) * 10)
       .limit(pageSize);
-    console.log("City route called");
+    // console.log("City route called");
+    res.send(tour);
+  } else if (
+    req.query.tourCategory &&
+    req.query.idealType &&
+    req.query.tourType
+  ) {
+    console.log(req.query, "id vanthuruchu");
+    const tourType = req.query.tourType.toString();
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.query.tourCategory] },
+      idealType: { $in: [req.query.idealType] },
+      tourType: req.query.tourType,
+    });
+    console.log(tour.length, "l");
+    res.send(tour);
+  } else if (req.query.tourCategory && req.query.idealType) {
+    console.log(req.query, "id vanthuruchu");
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.query.tourCategory] },
+      idealType: { $in: [req.query.idealType] },
+    });
+    console.log(tour.length, "l");
+    res.send(tour);
+    // tourType: req.query.tourType,
+  } else if (req.query.tourCategory && req.query.tourType) {
+    console.log(req.query, "id vanthuruchu");
+    const tourType = req.query.tourType.toString();
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.query.tourCategory] },
+      tourType: req.query.tourType,
+    });
+    console.log(tour.length, "l");
+    res.send(tour);
+  } else if (req.query.idealType && req.query.tourType) {
+    console.log(req.query, "id vanthuruchu");
+    const tour = await TourIdea.find({
+      idealType: { $in: [req.query.idealType] },
+      tourType: req.query.tourType,
+    });
+    console.log(tour.length, "l");
     res.send(tour);
   } else {
     const tour = await TourIdea.find();
-    console.log("City route called");
+    // console.log("City route called");
     res.send(tour);
   }
 });
@@ -31,8 +71,21 @@ router.get("/tour", async (req, res) => {
 router.get("/tour/:id", async (req, res) => {
   console.log(req.params, "id vanthuruchu");
   const tour = await TourIdea.findById({ _id: req.params.id });
+
   res.send(tour);
 });
+router.get(
+  "/tour/filter/:tourCategory/:idealype/:tourType",
+  async (req, res) => {
+    console.log(req.params, "id vanthuruchu");
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.params.tourCategory] },
+      idealType: { $in: [req.params.idealType] },
+      tourType: req.params.tourType,
+    });
+    res.send(tour);
+  }
+);
 
 //Get City by Name
 
