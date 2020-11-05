@@ -13,8 +13,8 @@ router.get("/filtertour", async (req, res) => {
     console.log(req.query, "id vanthuruchu");
 
     const tourCategory =
-      req.query.tourCategory == ""
-        ? req.query.tourCategory
+      req.query.tourCategory == "Hop On and Off"
+        ? "Hop On & Off"
         : req.query.tourCategory;
     const tourType =
       req.query.tourType == "" ? req.query.tourType : req.query.tourType;
@@ -46,18 +46,18 @@ router.get("/tour/:id", async (req, res) => {
 
   res.send(tour);
 });
-router.get(
-  "/tour/filter/:tourCategory/:idealype/:tourType",
-  async (req, res) => {
-    console.log(req.params, "id vanthuruchu");
-    const tour = await TourIdea.find({
-      tourCategory: { $in: [req.params.tourCategory] },
-      idealType: { $in: [req.params.idealType] },
-      tourType: req.params.tourType,
-    });
-    res.send(tour);
-  }
-);
+// router.get(
+//   "/tour/filter/:tourCategory/:idealype/:tourType",
+//   async (req, res) => {
+//     console.log(req.params, "id vanthuruchu");
+//     const tour = await TourIdea.find({
+//       tourCategory: { $in: [req.params.tourCategory] },
+//       idealType: { $in: [req.params.idealType] },
+//       tourType: req.params.tourType,
+//     });
+//     res.send(tour);
+//   }
+// );
 
 router.get("/tour/cityname/:name", async (req, res) => {
   console.log(req.params);
