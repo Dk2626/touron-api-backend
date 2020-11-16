@@ -70,9 +70,22 @@ router.get("/tour/:id", async (req, res) => {
 // );
 
 router.get("/tour/cityname/:name", async (req, res) => {
-  console.log(req.params);
-  const tour = await TourIdea.find({ cityName: req.params.name });
-  res.send(tour);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+
+    const tour = await TourIdea.find({ cityName: req.params.name })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+    console.log(tour.length);
+
+    res.send(tour);
+  } else {
+    console.log(req.params);
+    const tour = await TourIdea.find({ cityName: req.params.name });
+    console.log(tour.length);
+    res.send(tour);
+  }
 });
 
 router.get("/tour/countryname/:name", async (req, res) => {
