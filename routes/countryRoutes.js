@@ -13,7 +13,7 @@ router.get("/country", async (req, res) => {
     const page = parseInt(req.query.page);
 
     const country = await Country.find()
-      .skip((page - 1) * 10)
+      .skip((page - 1) * pageSize)
       .limit(pageSize);
     console.log("City route called", country.length);
 
