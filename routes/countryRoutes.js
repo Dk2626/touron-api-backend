@@ -61,6 +61,11 @@ router.get("/country/edit/:id", async (req, res) => {
   const country = await Country.findById({ _id: req.params.id });
   res.send(country);
 });
+router.get("/country/:id", async (req, res) => {
+  console.log(req.body);
+  const country = await Country.findById({ _id: req.params.id });
+  res.send(country);
+});
 
 // Update City
 
