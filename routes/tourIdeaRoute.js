@@ -163,6 +163,8 @@ router.post("/tour/edit/:id", async (req, res) => {
   tour.idealType = req.body.idealType;
   tour.additionalInformation = req.body.additionalInformation;
   tour.tourPreferance = req.body.tourPreferance;
+  tour.tourVideoSrc = req.body.tourVideoSrc;
+  tour.videoAuthor = req.body.videoAuthor;
 
   console.log(tour);
   tour.save();

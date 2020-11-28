@@ -52,6 +52,10 @@ const Country = new Schema(
       type: String,
       required: true,
     },
+    countryFlagImage: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );

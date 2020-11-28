@@ -97,6 +97,14 @@ const TourIdea = new Schema(
       type: String,
       required: true,
     },
+    tourVideoSrc: {
+      type: String,
+      required: false,
+    },
+    videoAuthor: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );

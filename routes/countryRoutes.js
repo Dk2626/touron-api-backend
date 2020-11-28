@@ -47,11 +47,10 @@ router.post("/country", async (req, res) => {
     // const { name, coordinates, description, journeyType ,imageUrl} = req.body;
     // console.log(name, coordinates, description, journeyType);
     const country = new Country(req.body);
-
     await country.save();
     res.json({ country: country });
   } catch (err) {
-    res.send(err, "jjjj");
+    res.send(err);
   }
 });
 
@@ -79,6 +78,7 @@ router.post("/country/edit/:id", async (req, res) => {
   country.weather = req.body.weather;
   country.idealDays = req.body.idealDays;
   country.bestPlaces = req.body.bestPlaces;
+  country.countryFlagImage = req.body.countryFlagImage;
   country.visa = {
     onArrival: req.body.onArrival,
     cost: req.body.cost,
