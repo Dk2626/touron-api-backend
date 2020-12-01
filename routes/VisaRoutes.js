@@ -31,6 +31,10 @@ router.get("/visa/edit/:id", async (req, res) => {
   const visa = await Visa.findById({ _id: req.params.id });
   res.send(visa);
 });
+router.get("/visa/:countryname", async (req, res) => {
+  const visa = await Visa.find({ countryName: req.params.countryname });
+  res.send(visa);
+});
 
 //Update City
 
