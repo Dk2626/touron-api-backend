@@ -28,8 +28,10 @@ app.use(helmet());
 app.use(compression());
 
 const corsObj = {
-  orgin: "http:localost:4200",
-  optionSuccessStatus: 200,
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 //using the cors obj
 app.use(cors(corsObj));
