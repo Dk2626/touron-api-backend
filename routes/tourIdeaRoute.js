@@ -91,22 +91,63 @@ router.get("/tour/tourname/:name", async (req, res) => {
 });
 
 router.get("/tour/tourtype/:tourtype", async (req, res) => {
-  console.log(req.params.tourtype, "ko");
-  const tour = await TourIdea.find({ tourType: req.params.tourtype });
-  res.send(tour);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+    const tour = await TourIdea.find({ tourType: req.params.tourtype })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+    console.log(tour.length);
+
+    res.send(tour);
+  } else {
+    console.log(req.params);
+    const tour = await TourIdea.find({ tourType: req.params.tourtype });
+    console.log(tour.length);
+    res.send(tour);
+  }
 });
 router.get("/tour/tourcategory/:tourcategory", async (req, res) => {
-  console.log(req.params.tourcategory, "ko");
-  const tour = await TourIdea.find({
-    tourCategory: { $in: [req.params.tourcategory] },
-  });
-  res.send(tour);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.params.tourcategory] },
+    })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+    console.log(tour.length);
+
+    res.send(tour);
+  } else {
+    console.log(req.params);
+    const tour = await TourIdea.find({
+      tourCategory: { $in: [req.params.tourcategory] },
+    });
+    console.log(tour.length);
+    res.send(tour);
+  }
 });
 router.get("/tour/idealtype/:idealtype", async (req, res) => {
-  const tour = await TourIdea.find({
-    idealType: { $in: [req.params.idealtype] },
-  });
-  res.send(tour);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+    const tour = await TourIdea.find({
+      idealType: { $in: [req.params.idealtype] },
+    })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+    console.log(tour.length);
+
+    res.send(tour);
+  } else {
+    console.log(req.params);
+    const tour = await TourIdea.find({
+      idealType: { $in: [req.params.idealtype] },
+    });
+    console.log(tour.length);
+    res.send(tour);
+  }
 });
 
 //Post city
